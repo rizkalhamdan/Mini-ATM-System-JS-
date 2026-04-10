@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+
+:root {
+	--cadoa-font: "Google Sans", "Ubuntu", monospace !important;
+
+	--main-color: #ff7722 !important;
+	--main-opaci: #ff992288 !important;
+
+	--background-wh: #fed !important;
+	--second-col-wh: #edc !important;
+	--opacit-col-wh: #edc9 !important;
+
+
+	--background-dk: #100 !important;
+	--second-col-dk: #211911 !important;
+	--opacit-col-dk: #1119 !important;
+}
+
+p {
+	opacity: .8 !important;
+}
+
+button {
+	font-weight: initial !important;
+}
