@@ -131,11 +131,11 @@ deti.na({
 	...ver,
 	content: je.get_icon_rounded("contrast"),
 	click: load.view_themes
-}).atr({ title: "ctrl + v to fast change theme"})
+}).atr({ title: "ctrl + k to fast change theme"})
 
 deti.na({
 	...ver,
-	content: je.get_icon_rounded("key")
+	content: je.get_icon_rounded("language")
 })
 
 deti.na({

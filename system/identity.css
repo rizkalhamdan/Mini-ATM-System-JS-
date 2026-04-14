@@ -10,7 +10,7 @@
 	--background-wh: #fed !important;
 	--second-col-wh: #edc !important;
 	--opacit-col-wh: #edc9 !important;
-
+		
 
 	--background-dk: #100 !important;
 	--second-col-dk: #211911 !important;
@@ -23,4 +23,5 @@ p {
 
 button {
 	font-weight: initial !important;
+  -webkit-tap-highlight-color: transparent;
 }
