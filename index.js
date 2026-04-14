@@ -29,7 +29,7 @@ main.na({
 
 main.na({
 	name: "p",
-	content: "Editorial precision in finical lore bgh bbjnub hbyjhbkyug bhjvjh bhhby vbhbyh v jnjihciwnc bduibiubpdi ybpbi ybc h b puib b bby biwui non nubnj bnjkn uinjnui bjnjk njnoo bujb"
+	content: "Manage your account easily. Securely deposit, withdraw, and track your investment growth in one place."
 })
 
 main.na({ content: "<br>"})
@@ -75,12 +75,12 @@ const login = seco.na({
 
 login.na({
 	name: "h2",
-	content: "Welcome back"
+	content: "Welcome back!"
 })
 
 login.na({
 	name: "p",
-	content: "<br> Enter your credentiais to access you terminal. <br> <br>",
+	content: "<br> Please Enter your name and account number to access your dashboard (terminal). <br> <br>",
 })
 
 
@@ -135,17 +135,26 @@ deti.na({
 
 deti.na({
 	...ver,
-	content: je.get_icon_rounded("language")
+	content: je.get_icon_rounded("language"),
+	click: function() {
+		load.CLC.toast("This project is till under-developing.", "warning")
+	}
 })
 
 deti.na({
 	...ver,
-	content: je.get_icon_rounded("key")
+	content: je.get_icon_rounded("key"),
+	click: function() {
+		// Its okey
+	}
 })
 
 deti.na({
 	...ver,
-	content: je.get_icon_rounded("key")
+	content: je.get_icon_rounded("support_agent"),
+	click: function() {
+		location.assign("support/")
+	}
 })
 
 
