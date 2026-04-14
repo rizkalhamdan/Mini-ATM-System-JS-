@@ -9,3 +9,13 @@ export const boot = function() {
 
 	return true
 }
+
+export const constants = {
+	is_android: false,
+}
+
+
+// Identity
+export const _check_data_ = function(user_name, account_number) {
+	return user_name === "rizkhamdan" && account_number === "949494"
+}

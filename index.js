@@ -1,4 +1,4 @@
-import { boot } from "/boot.js"
+import { boot, constants } from "/boot.js"
 
 load.setup(1, 0, 1, 0)
 
@@ -63,7 +63,7 @@ const seco = je.na({
 	'max-width': "40rem"
 })
 
-const login = seco.na({
+export const login = seco.na({
 	classes: "logcard rc som",
 	height: "35rem",
 	background: "var(--second-col)",
@@ -84,13 +84,13 @@ login.na({
 })
 
 
-const username = login.na({
+export const username = login.na({
 	name: "input",
 	classes: "rc inp ii",
 	hint: "Username"
 })
 
-const account_number = login.na({
+export const account_number = login.na({
 	name: "input",
 	classes: "rc inp ii",
 	hint: "Account number"
@@ -100,7 +100,7 @@ account_number.atr({ type: "number"})
 
 
 
-login.na({
+export const access_nag = login.na({
 	name: "button",
 	classes: "rc btn main width center",
 	content: "Access to terminal" + je.get_icon_rounded("arrow_right_alt"),
@@ -157,6 +157,10 @@ deti.na({
 	}
 })
 
+import { load_now } from "/app.js"
+
+
+if(!constants.is_android)	setTimeout(load_now, 200)
 
 
 
