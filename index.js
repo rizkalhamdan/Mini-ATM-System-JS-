@@ -2,7 +2,7 @@ import { boot, constants } from "/boot.js"
 
 load.setup(1, 0, 1, 0)
 
-const je = new Naghoom("Mini ATM System")
+export const je = new Naghoom("Mini ATM System")
 
 boot()
 
