@@ -14,9 +14,14 @@ const matm_ident = {
 
 
 	get_ident: function() {
-		if(this.is_append()) return false
+		if(!this.is_append()) return false
 
 		return [localStorage.matm_username, localStorage.matm_accountn]
+	},
+
+	reset: function() {
+		localStorage.matm_username = undefined
+		localStorage.matm_accountn = undefined
 	}
 }
 
