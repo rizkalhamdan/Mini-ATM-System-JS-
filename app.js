@@ -22,7 +22,6 @@ export const load_now = async function() {
 
 	await sleep(1000)
 
-	load.CLC.toast(Ident.is_append())
 	if(Ident.is_append()) await _is_exist_()
 	
 	await sleep(2000)
@@ -59,15 +58,15 @@ const _is_exist_ = function() {
 
 	kbrna_omer.na({
 		name: "b",
-		classes: "rc big col",
-		content: "There is exist ident!"
+		classes: "rc big col md_center",
+		content: je.get_icon_rounded("security") + " There is exist ident!"
 	})
 
 	kbrna_omer.na({
 		classes: "rc box",
 		content: `
-			username: ${Ident.get_ident()[0]} <br>
-			account number: ${Ident.get_ident()[1]}
+			Username: ${Ident.get_ident()[0]} <br>
+			Account number: ${Ident.get_ident()[1]}
 		`
 	})
 
