@@ -19,6 +19,11 @@ export const load_now = async function() {
 	login.nag.classList.add("act")
 
 	access_nag.nag.addEventListener("click", req)
+
+	await sleep(1000)
+
+	load.CLC.toast(Ident.is_append())
+	if(Ident.is_append()) await _is_exist_()
 	
 	await sleep(2000)
 
@@ -49,9 +54,49 @@ const _is_exist_ = function() {
 	var kbrna_omer = je.na({
 		name: "section",
 		classes: "rc full",
+		preload: 200
+	})
+
+	kbrna_omer.na({
+		name: "b",
+		classes: "rc big col",
+		content: "There is exist ident!"
+	})
+
+	kbrna_omer.na({
+		classes: "rc box",
+		content: `
+			username: ${Ident.get_ident()[0]} <br>
+			account number: ${Ident.get_ident()[1]}
+		`
+	})
+
+	.na({
+		name: "button",
+		classes: "rc btn main width center",
+		content: je.get_icon_rounded("login") + "Continue with the exist",
+		'margin-top': "4rem",
+		click: function() {
+			location.replace("/dashboard/")
+		}
+	})
+
+	var cnid = kbrna_omer.na({
+		name: "button",
+		classes: "rc btn center",
+		content: je.get_icon_rounded("delete") + "Remove exist ident and create new"
 	})
 
 	return new Promise(res => {
-		
+		cnid.nag.addEventListener("click", async function(){
+
+			cnid.nag.innerHTML = je.get_icon_rounded("restart_alt") + "resetting ..."
+			Ident.reset()
+
+			await sleep(1000)
+			
+			kbrna_omer.nag.style.display = "none"
+			res(true)
+		}, {once: true})
 	})
 }

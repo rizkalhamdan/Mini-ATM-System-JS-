@@ -1,6 +1,6 @@
 const matm_ident = {
 	is_append: function() {
-		return (localStorage.matm_username && localStorage.matm_accountn) ? true : false
+		return localStorage.matm_username && localStorage.matm_accountn ? true : false
 	},
 
 	append_ident: function(username = "Ident", account_number = 9494946) {
@@ -20,8 +20,8 @@ const matm_ident = {
 	},
 
 	reset: function() {
-		localStorage.matm_username = undefined
-		localStorage.matm_accountn = undefined
+		localStorage.matm_username = ""
+		localStorage.matm_accountn = ""
 	}
 }
 
