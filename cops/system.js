@@ -9,9 +9,11 @@ Al: 22:41 17.04.2026
 
 */
 
+const som = []
 
-let BO = document.getElementById("BODY")
-let AllLinks = COPSPrograms // Change CadoaLonks varible
+
+let BO = document.getElementById("HAMDNAG94")
+let AllLinks = som // Change CadoaLonks varible
 let filenotfound = ""
 let lasts = []
 

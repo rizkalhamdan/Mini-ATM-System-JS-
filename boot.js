@@ -19,3 +19,10 @@ export const constants = {
 export const _check_data_ = function(user_name, account_number) {
 	return user_name === "rizkhamdan" && account_number === "949494"
 }
+
+
+
+
+export const sleep = function(ms) {
+	return new Promise(res => setTimeout(res, ms))
+}
