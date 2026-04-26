@@ -19,6 +19,10 @@ const matm_ident = {
 		return [localStorage.matm_username, localStorage.matm_accountn]
 	},
 
+	get_currency: function() {
+		return "$" // Just beta
+	},
+
 	reset: function() {
 		localStorage.matm_username = ""
 		localStorage.matm_accountn = ""

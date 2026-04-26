@@ -1,4 +1,4 @@
-import { boot } from '/boot.js'
+import { boot, sleep } from '/boot.js'
 
 load.setup(1, 0, 1, 1)
 
@@ -20,4 +20,4 @@ app.head()
 
 app.welcome()
 
-app.balance()
+app.balance.view()

@@ -66,57 +66,70 @@ export const app = {
 
 		wel.na({
 			name: "p",
-			content: "Your data is ready now",
+			content: "All your data is safe.",
 			'font-size': "1.2rem"
 		})
 	},
 
-	balance: function() {
-		var wide = je.na({
-			name: "section",
-			classes: "rc flex",
-			'margin-top': "2rem"
-		})
+	balance: {
+		bl: document.createElement("h1"),
+		view: function() {
+			var wide = je.na({
+				name: "section",
+				classes: "rc flex",
+				'margin-top': "2rem"
+			})
 
-		var bala = wide.na({
-			classes: "rc go",
-			width: "100%",
-			'text-align': "left"
-		})
+			var bala = wide.na({
+				classes: "rc go",
+				width: "100%",
+				'text-align': "left"
+			})
 
-		bala.na({
-			name: "b",
-			classes: "col",
-			content: "Current balance"
-		})
+			bala.na({
+				name: "b",
+				classes: "col",
+				content: "Current balance"
+			})
 
-		var current_balance = bala.na({
-			name: "h1",
-			'font-size': "2.8rem",
-			content: "$ 23,56462.99",
-			margin: "2rem 0"
-		})
+			var current_balance = bala.na({
+				name: "h1",
+				'font-size': "2.8rem",
+				content: "$ 94,999,999.94",
+				margin: "2rem 0"
+			})
 
-		bala.na({ classes: "fix"})
+			this.bl = current_balance.nag
 
-		bala.na({
-			name: "button",
-			classes: "rc btn main",
-			content: "Main",
-			margin: "1rem"
-		})
+			bala.na({ classes: "fix"})
 
-		bala.na({
-			name: "button",
-			classes: "rc btn",
-			content: "out now"
-		})
+			bala.na({
+				name: "button",
+				classes: "rc btn main",
+				content: je.get_icon_rounded("arrow_cool_down") + "Depsoit funds",
+				'margin-right': "1rem"
+			})
+
+			bala.na({
+				name: "button",
+				classes: "rc btn",
+				content: je.get_icon_rounded("arrow_warm_up") + "Withdraw"
+			})
 
 
-		var sug = wide.na({
-			classes: "rc go",
-			display: "none"
-		})
+			var sug = wide.na({
+				classes: "rc go",
+				display: "none"
+			})
+		},
+
+		change: function(value = this.bl.innerHTML) {
+			value = value.toFixed(2)
+
+			this.bl.innerHTML = `${Ident.get_currency()} ${value}`
+
+			load.CLC.write(this.bl)
+		}
 	}
 
 }
