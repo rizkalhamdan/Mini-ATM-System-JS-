@@ -12,7 +12,7 @@ export const _side_bar_id_ = load.side_bar_id
 
 
 
-import { app, _reset_side_bar_ } from '/dashboard/app.js'
+import { app, _reset_side_bar_, fast_control } from '/dashboard/app.js'
 
 _reset_side_bar_ ()
 

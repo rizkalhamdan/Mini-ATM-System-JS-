@@ -2,6 +2,14 @@ import { je, _side_bar_id_ } from '/dashboard/index.js'
 import { sleep } from '/boot.js'
 import { Ident } from '/core/ident.js'
 
+export const fast_control = {
+	loading: async function(status = true) {
+		var ddlloj = document.getElementsByClassName("loading_control")[0] 
+		if (status) ddlloj.classList.add("osloading")
+		else ddlloj.classList.remove("osloading")
+	}
+}
+
 export const _reset_side_bar_ = async function() {
 	var sidebar = document.getElementById(_side_bar_id_)
 
@@ -19,11 +27,11 @@ export const _reset_side_bar_ = async function() {
 		<br> <br>
 		<div class='rc go som act loc_card'>
 			<h2 class='col'>${Ident.get_ident()[0]}</h2>
-			<h2>${Ident.get_ident()[1]}</h2> 
-			<br> <br> <br>
+			<h2>${Ident.get_ident()[1]}</h2>
 			
 			<button class='rc btn lineout mal center' onclick='location.replace("/")'>${je.get_icon_rounded('switch_account')}Account</button>
 		</div>
+		<div class='rc loading_control'><div class='one'></div><div class='two'></div></div> 
 	`
 	sidebar.appendChild(new_content)
 
@@ -73,6 +81,14 @@ export const app = {
 
 	balance: {
 		bl: document.createElement("h1"),
+		depsoit: function() {
+			load.CLC.toast("Depsoit")
+		},
+		
+		withdraw: function() {
+			load.CLC.toast("clear it")
+		},
+
 		view: function() {
 			var wide = je.na({
 				name: "section",
@@ -107,13 +123,15 @@ export const app = {
 				name: "button",
 				classes: "rc btn main",
 				content: je.get_icon_rounded("arrow_cool_down") + "Depsoit funds",
-				'margin-right': "1rem"
+				'margin-right': "1rem",
+				click: app.balance.depsoit
 			})
 
 			bala.na({
 				name: "button",
 				classes: "rc btn",
-				content: je.get_icon_rounded("arrow_warm_up") + "Withdraw"
+				content: je.get_icon_rounded("arrow_warm_up") + "Withdraw",
+				click: app.balance.withdraw
 			})
 
 
