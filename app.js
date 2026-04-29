@@ -4,7 +4,7 @@ import { Ident } from "/core/ident.js"
 
 const _check_req_able_ = function() {
 	return (
-		username.nag.value.length > 4 &&
+		username.nag.value.length > 2 &&
 		username.nag.value.length < 14 &&
 		
 		account_number.nag.value.length === 7)
