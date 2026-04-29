@@ -148,6 +148,50 @@ export const app = {
 
 			load.CLC.write(this.bl)
 		}
+	},
+
+	logs: {
+		lg: document.createElement("div"),
+
+		view: function(data = []) {
+			this.lg = je.na({
+			classes: "rc box",
+			'max-height': "30vh",
+			})
+
+			data.forEach(e => this.append(e))
+		},
+		
+		append: function(q = {}) {
+			var one = this.lg.na({ classes: "rc flex"})
+
+			one.na({
+				name: "span",
+				content: q.id || "0",
+				preload: 100
+			})
+
+			one.na({
+				name: "span",
+				content: q.type || "Unknown option",
+				preload: 200
+			})
+
+			one.na({
+				name: "b",
+				content: q.date || "01:43 30.04.2026",
+				preload: 300
+			})
+
+			one.na({
+				name: "b",
+				classes: "col nus rc",
+				content: q.status || false ? "<span class='rc green'> success </span>" : "<span class='rc red'> fail </span>",
+				preload: 400
+			})
+
+
+		}
 	}
 
 }
