@@ -21,7 +21,7 @@ class System {
 
 	reset() {
 		var initial_balance = "0",
-			initial_data = [{type: "New account", date: new Date().getTime(), status: true, id: 0}]
+			initial_data = [{type: "New account", date: new Date().toDateString(), status: true, id: 0}]
 		
 		localStorage.miniatmbalance = initial_balance
 		localStorage.miniatmlogs = JSON.stringify(initial_data)
@@ -29,7 +29,7 @@ class System {
 		return true
 	}
 
-	append(q = {type: "Unknown input", id: 0, date: new Date().getTime(), status: false}) {
+	append(q = {type: "Unknown input", id: 0, date: new Date().toDateString(), status: false}) {
 		var ol = JSON.parse(localStorage.miniatmlogs)
 		ol.push(q)
 
@@ -41,6 +41,11 @@ class System {
 	get_logs() {
 		if(! this.is_exist()) return []
 		return JSON.parse(localStorage.miniatmlogs)
+	}
+
+	get_balance() {
+		if(! this.is_exist()) return 0
+		else return +localStorage.miniatmbalance
 	}
 }
 
