@@ -47,6 +47,11 @@ class System {
 		if(! this.is_exist()) return 0
 		else return +localStorage.miniatmbalance
 	}
+
+	get_balance_full() {
+		if(! this.is_exist()) return 0
+		return this.get_balance() + " " + Ident.get_currency()
+	}
 }
 
 export class system extends System {}
