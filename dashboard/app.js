@@ -43,7 +43,7 @@ export const _reset_side_bar_ = async function() {
 }
 
 export const app = {
-	side_version: "1.0",
+	side_version: "1.1",
 	
 	head: function() {
 		var hd = je.na({
@@ -191,6 +191,40 @@ export const app = {
 			})
 
 
+		}
+	},
+
+	pop: {
+		preload: function() {
+			var father = document.createElement("section")
+			father.classList.add("rc", "full", "align", "itsforremo")
+			father.innerHTML = `<button class='rc btn' style='position: absolute; right: 2rem; top: 2rem' onclick='load.remo(document.getElementsByClassName("itsforremo")[0])'>${je.get_icon_rounded('arrow_back_ios_new')}</button>`
+
+			// document.body.appendChild(this.father)
+			return father 
+		},
+
+		dep: function(cur_bal = "Could not fetch it now!") {
+			var contain = this.preload()
+
+			var itsokey = ['jssi' + Math.floor(Math.random() * 10e3), 'jssb' + Math.floor(Math.random() * 10e3)]
+
+			contain.innerHTML += `
+				<div class='rc box'>
+					<h2 class='rc big col'>Depsoit</h2>
+					<h3>Current balance:  (${cur_bal})</h3>
+					<br>
+					<input placeholder='Insert the amount' class='rc inp ${itsokey[0]}' type='number'/>
+					<button class='rc btn main center ${itsokey[1]}'>${je.get_icon_rounded("paid")} Paid</button>
+				</div>
+			`
+
+			document.body.appendChild(contain)
+			return itsokey // Classes name
+		},
+
+		withdraw: function() {
+			
 		}
 	}
 

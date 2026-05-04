@@ -52,5 +52,5 @@ fast_control.loading(false)
 
 
 
-
-
+var itsokey = app.pop.dep(sys.get_balance_full())
+window.its = itsokey
